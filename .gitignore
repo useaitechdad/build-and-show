@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Secrets / credentials — never commit
+.env
+.env.*
+*.key
+*.pem
+secrets/
+client_secret*.json
+token*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Editor / OS cruft
+.idea/
+.vscode/
+*.swp
+Thumbs.db
