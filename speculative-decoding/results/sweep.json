@@ -1,0 +1,79 @@
+{
+  "baseline_target_passes": 600,
+  "tokens": 600,
+  "draft_cost_ratio": 0.1,
+  "sweep": [
+    {
+      "k": 1,
+      "accept_rate": 0.7857,
+      "target_passes": 336,
+      "tokens_per_target_pass": 1.786,
+      "speedup_x": 1.62,
+      "identical": true
+    },
+    {
+      "k": 2,
+      "accept_rate": 0.75,
+      "target_passes": 240,
+      "tokens_per_target_pass": 2.5,
+      "speedup_x": 2.08,
+      "identical": true
+    },
+    {
+      "k": 3,
+      "accept_rate": 0.7113,
+      "target_passes": 192,
+      "tokens_per_target_pass": 3.125,
+      "speedup_x": 2.4,
+      "identical": true
+    },
+    {
+      "k": 4,
+      "accept_rate": 0.6472,
+      "target_passes": 168,
+      "tokens_per_target_pass": 3.571,
+      "speedup_x": 2.55,
+      "identical": true
+    },
+    {
+      "k": 5,
+      "accept_rate": 0.6333,
+      "target_passes": 144,
+      "tokens_per_target_pass": 4.167,
+      "speedup_x": 2.78,
+      "identical": true
+    },
+    {
+      "k": 6,
+      "accept_rate": 0.6681,
+      "target_passes": 120,
+      "tokens_per_target_pass": 5.0,
+      "speedup_x": 3.12,
+      "identical": true
+    },
+    {
+      "k": 8,
+      "accept_rate": 0.5021,
+      "target_passes": 120,
+      "tokens_per_target_pass": 5.0,
+      "speedup_x": 2.78,
+      "identical": true
+    },
+    {
+      "k": 12,
+      "accept_rate": 0.3359,
+      "target_passes": 120,
+      "tokens_per_target_pass": 5.0,
+      "speedup_x": 2.28,
+      "identical": true
+    },
+    {
+      "k": 16,
+      "accept_rate": 0.2528,
+      "target_passes": 120,
+      "tokens_per_target_pass": 5.0,
+      "speedup_x": 1.93,
+      "identical": true
+    }
+  ]
+}
