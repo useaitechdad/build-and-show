@@ -13,6 +13,7 @@ numbers that ended up on screen.
 | Demo | What it shows | Verified finding | Video |
 |---|---|---|---|
 | [`speculative-decoding/`](./speculative-decoding) | How a big LLM can run ~3× faster while returning **byte-for-byte identical** output, via a small draft model + one-pass verification | Output is provably identical to the target model alone; ~3.6× fewer expensive forward passes at the sweet spot (K≈6 → 3.1×) | *(add link)* |
+| [`flash3-vs-35/`](./flash3-vs-35) | Whether Gemini 3 Flash and 3.5 Flash *act on* a rule stated 6 turns earlier — not just recall it | Both **remember** the rule; only 3.5 **enforces** it in code (**5/5** runs vs **0/5** for Flash 3, which leaves it as a comment). Two other apparent gaps didn't survive N=5 replication | *(add link)* |
 
 *More coming — each new build-and-show video adds a folder.*
 
