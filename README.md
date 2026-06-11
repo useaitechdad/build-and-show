@@ -14,6 +14,7 @@ numbers that ended up on screen.
 |---|---|---|---|
 | [`speculative-decoding/`](./speculative-decoding) | How a big LLM can run ~3× faster while returning **byte-for-byte identical** output, via a small draft model + one-pass verification | Output is provably identical to the target model alone; ~3.6× fewer expensive forward passes at the sweet spot (K≈6 → 3.1×) | *(add link)* |
 | [`flash3-vs-35/`](./flash3-vs-35) | Whether Gemini 3 Flash and 3.5 Flash *act on* a rule stated 6 turns earlier — not just recall it | Both **remember** the rule; only 3.5 **enforces** it in code (**5/5** runs vs **0/5** for Flash 3, which leaves it as a comment). Two other apparent gaps didn't survive N=5 replication | *(add link)* |
+| [`yc-w26-analysis/`](./yc-w26-analysis) | Whether YC still backs its 20-year "get a cofounder" advice — by pulling all 198 companies in the Winter 2026 batch from YC's public directory and counting how many are one person | **13 of 198** W26 companies are a single person (`team_size = 1`) — **7%**, a multi-year high vs the **2–4%** that held across every batch from 2022 to 2025. (The widely-quoted "22 solo founders" is a third-party *founder*-count, cited separately, not produced by this script) | *(add link)* |
 
 *More coming — each new build-and-show video adds a folder.*
 
