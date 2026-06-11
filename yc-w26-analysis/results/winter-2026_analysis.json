@@ -1,0 +1,203 @@
+{
+  "batch": "winter-2026",
+  "total": 198,
+  "ai_count": 158,
+  "ai_pct": 80,
+  "team_size_distribution": {
+    "0": 2,
+    "1": 13,
+    "2": 95,
+    "3": 40,
+    "4": 24,
+    "5": 11,
+    "6": 2,
+    "8": 1,
+    "10": 2,
+    "12": 2,
+    "15": 2
+  },
+  "solo_count": 13,
+  "solo_pct": 7,
+  "solo_companies": [
+    {
+      "name": "Aurorin CAD",
+      "one_liner": "Claude code for Mechanical Engineers",
+      "industries": [
+        "B2B",
+        "Engineering, Product and Design"
+      ],
+      "url": "https://www.ycombinator.com/companies/aurorin-cad"
+    },
+    {
+      "name": "Button Computer",
+      "one_liner": "The tiny computer built for voice AI.",
+      "industries": [
+        "B2B",
+        "Engineering, Product and Design"
+      ],
+      "url": "https://www.ycombinator.com/companies/button-computer"
+    },
+    {
+      "name": "ClaimGlide",
+      "one_liner": "AI automated prior-auths for private medical practices",
+      "industries": [
+        "Healthcare",
+        "Healthcare Services"
+      ],
+      "url": "https://www.ycombinator.com/companies/claimglide"
+    },
+    {
+      "name": "DAIVIN!",
+      "one_liner": "Tankless Dive Gear - Breath Autonomy at Sea, Land & Space",
+      "industries": [
+        "Industrials",
+        "Defense"
+      ],
+      "url": "https://www.ycombinator.com/companies/daivin"
+    },
+    {
+      "name": "Envariant",
+      "one_liner": "Interpretability and reasoning infra for foundation models.",
+      "industries": [
+        "B2B"
+      ],
+      "url": "https://www.ycombinator.com/companies/envariant"
+    },
+    {
+      "name": "Galactic Resource Utilization Space, Inc. (GRU Space)",
+      "one_liner": "Moon Hotel -> The Intergalactic Construction Company of Earth",
+      "industries": [
+        "Industrials",
+        "Aviation and Space"
+      ],
+      "url": "https://www.ycombinator.com/companies/galactic-resource-utilization-space-inc-gru-space"
+    },
+    {
+      "name": "Hlabs",
+      "one_liner": "US-Made Parts for Robots",
+      "industries": [
+        "Industrials"
+      ],
+      "url": "https://www.ycombinator.com/companies/hlabs"
+    },
+    {
+      "name": "InventoryQuant",
+      "one_liner": "We automate the inventory process in insurance",
+      "industries": [
+        "B2B"
+      ],
+      "url": "https://www.ycombinator.com/companies/inventoryquant"
+    },
+    {
+      "name": "Overdrive Health",
+      "one_liner": "AI-Native Medical Billing Services",
+      "industries": [
+        "Healthcare",
+        "Healthcare Services"
+      ],
+      "url": "https://www.ycombinator.com/companies/overdrive-health"
+    },
+    {
+      "name": "Reframe",
+      "one_liner": "AI-native, hardware procurement marketplace",
+      "industries": [
+        "B2B",
+        "Engineering, Product and Design"
+      ],
+      "url": "https://www.ycombinator.com/companies/usereframe"
+    },
+    {
+      "name": "Rhizome AI",
+      "one_liner": "Agent Platform for Life Sciences",
+      "industries": [
+        "B2B"
+      ],
+      "url": "https://www.ycombinator.com/companies/rhizome-ai"
+    },
+    {
+      "name": "Sparkles",
+      "one_liner": "Make everyone on your team an engineer",
+      "industries": [
+        "B2B",
+        "Engineering, Product and Design"
+      ],
+      "url": "https://www.ycombinator.com/companies/sparkles"
+    },
+    {
+      "name": "Traverse",
+      "one_liner": "Research lab solving non-verifiable work",
+      "industries": [
+        "B2B"
+      ],
+      "url": "https://www.ycombinator.com/companies/traverse"
+    }
+  ],
+  "solo_top_industries": [
+    [
+      "B2B",
+      8
+    ],
+    [
+      "Engineering, Product and Design",
+      4
+    ],
+    [
+      "Industrials",
+      3
+    ],
+    [
+      "Healthcare",
+      2
+    ],
+    [
+      "Healthcare Services",
+      2
+    ],
+    [
+      "Defense",
+      1
+    ],
+    [
+      "Aviation and Space",
+      1
+    ]
+  ],
+  "solo_trend": [
+    {
+      "batch": "winter-2024",
+      "total": 249,
+      "solo": 9,
+      "pct": 4
+    },
+    {
+      "batch": "summer-2024",
+      "total": 248,
+      "solo": 5,
+      "pct": 2
+    },
+    {
+      "batch": "winter-2025",
+      "total": 168,
+      "solo": 7,
+      "pct": 4
+    },
+    {
+      "batch": "summer-2025",
+      "total": 166,
+      "solo": 5,
+      "pct": 3
+    },
+    {
+      "batch": "fall-2025",
+      "total": 148,
+      "solo": 3,
+      "pct": 2
+    },
+    {
+      "batch": "winter-2026",
+      "total": 198,
+      "solo": 13,
+      "pct": 7
+    }
+  ]
+}

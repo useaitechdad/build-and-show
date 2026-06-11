@@ -1,0 +1,40 @@
+$ pull Y Combinator Winter 2026 batch
+  source: yc-oss.github.io/api  (mirror of YC's public directory)
+  fetched 198 companies
+
+  scanning for AI companies ...
+  158/198 mention AI  (80%)
+
+  team size   companies
+      1         13  #############
+      2         95  ###############################################################################################
+      3         40  ########################################
+      4         24  ########################
+      5         11  ###########
+     6+          9
+
+  >>> 13 companies are ONE person. No cofounder. No employees.
+
+    - Aurorin CAD: Claude code for Mechanical Engineers
+    - Button Computer: The tiny computer built for voice AI.
+    - ClaimGlide: AI automated prior-auths for private medical practices
+    - DAIVIN!: Tankless Dive Gear - Breath Autonomy at Sea, Land & Space
+    - Envariant: Interpretability and reasoning infra for foundation models.
+    - Galactic Resource Utilization Space, Inc. (GRU Space): Moon Hotel -> The Intergalactic Construction Company of Earth
+    - Hlabs: US-Made Parts for Robots
+    - InventoryQuant: We automate the inventory process in insurance
+    - Overdrive Health: AI-Native Medical Billing Services
+    - Reframe: AI-native, hardware procurement marketplace
+    - Rhizome AI: Agent Platform for Life Sciences
+    - Sparkles: Make everyone on your team an engineer
+    - Traverse: Research lab solving non-verifiable work
+
+  one-person companies, batch over batch:
+     Winter 2024     9/249 (4%)  #########
+     Summer 2024     5/248 (2%)  #####
+     Winter 2025     7/168 (4%)  #######
+     Summer 2025     5/166 (3%)  #####
+     Fall 2025       3/148 (2%)  ###
+     Winter 2026    13/198 (7%)  #############
+
+  wrote results/winter-2026_analysis.json
