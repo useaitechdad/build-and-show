@@ -1,0 +1,25 @@
+{
+  "model": "gemini-3-flash-preview",
+  "task": "You are triaging production incidents. Across the incident report(s) provided, identify the SINGLE most common underlying root cause and name the service involved most often. Answer in 2-3 sentences.",
+  "n_reports": 6,
+  "inline": {
+    "root_context_tokens": 21781,
+    "total_tokens": 21781,
+    "answer": "The most common underlying root cause across the incidents is database connection pool exhaustion, which accounted for four of the six reported failures. The service most frequently involved is **checkout-api**, appearing in multiple reports where traffic spikes or slow queries saturated its connection limits."
+  },
+  "subagents": {
+    "root_context_tokens": 262,
+    "total_tokens": 22230,
+    "answer": "The most common root cause identified across these reports is database connection pool exhaustion, which was responsible for four out of the six incidents. The service most frequently involved is checkout-api, appearing in two separate reports related to this exhaustion issue.",
+    "summaries": [
+      "INC-4471 (checkout-api): Service: checkout-api.\nRoot cause: Database connection pool exhaustion during a traffic spike.",
+      "INC-4488 (search-svc): Service: search-svc.\nRoot cause: Resource-limit misconfiguration where memory limits were insufficient for an expanded in-memory cache.",
+      "INC-4502 (payments-svc): Service: payments-svc.\nRoot cause: Database connection pool exhaustion caused by long-lived transactions from a nightly settlement batch.",
+      "INC-4519 (notif-svc): Service: notif-svc.\nRoot cause: Missing exponential backoff in the retry policy.",
+      "INC-4530 (checkout-api): Service: checkout-api.\nRoot cause: Database connection pool exhaustion triggered by a slow, unindexed query.",
+      "INC-4544 (inventory-svc): Service: inventory-svc.\nRoot cause: connection pool exhaustion caused by a configuration regression that reduced the pool size."
+    ]
+  },
+  "root_context_ratio": 83.13,
+  "ts": "2026-06-14T16:06:36"
+}
