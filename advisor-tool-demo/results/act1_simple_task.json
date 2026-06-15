@@ -1,0 +1,522 @@
+{
+  "pricing": {
+    "claude-haiku-4-5-20251001": {
+      "input": 1.0,
+      "output": 5.0
+    },
+    "claude-sonnet-4-6": {
+      "input": 3.0,
+      "output": 15.0
+    },
+    "claude-opus-4-8": {
+      "input": 5.0,
+      "output": 25.0
+    }
+  },
+  "pricing_source": "Claude API list rates per 1M tok (verified 2026-06-15)",
+  "verify_params": {
+    "num_workers": 4,
+    "max_queue": 8,
+    "total_jobs": 60,
+    "timeout_secs": 30
+  },
+  "summary": {
+    "sonnet_solo": {
+      "label": "Sonnet solo",
+      "model": "claude-sonnet-4-6",
+      "runs": 5,
+      "passed": 5,
+      "pass_rate": 1.0,
+      "mean_cost_usd": 0.024597,
+      "mean_total_tokens": 1561,
+      "fail_reasons": []
+    },
+    "advisor": {
+      "label": "Sonnet + Opus advisor",
+      "model": "claude-sonnet-4-6",
+      "runs": 5,
+      "passed": 5,
+      "pass_rate": 1.0,
+      "mean_cost_usd": 0.105363,
+      "mean_total_tokens": 3208,
+      "fail_reasons": []
+    },
+    "opus_solo": {
+      "label": "Opus solo",
+      "model": "claude-opus-4-8",
+      "runs": 5,
+      "passed": 5,
+      "pass_rate": 1.0,
+      "mean_cost_usd": 0.042815,
+      "mean_total_tokens": 1595,
+      "fail_reasons": []
+    }
+  },
+  "runs": [
+    {
+      "config": "sonnet_solo",
+      "label": "Sonnet solo",
+      "model": "claude-sonnet-4-6",
+      "run": 0,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0501
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 392,
+        "executor_output_tokens": 1626,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.025566,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.025566,
+      "elapsed_secs": 28.0
+    },
+    {
+      "config": "sonnet_solo",
+      "label": "Sonnet solo",
+      "model": "claude-sonnet-4-6",
+      "run": 1,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0738
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 392,
+        "executor_output_tokens": 1485,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.023451,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.023451,
+      "elapsed_secs": 27.1
+    },
+    {
+      "config": "sonnet_solo",
+      "label": "Sonnet solo",
+      "model": "claude-sonnet-4-6",
+      "run": 2,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0749
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 392,
+        "executor_output_tokens": 2053,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.031971,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.031971,
+      "elapsed_secs": 39.0
+    },
+    {
+      "config": "sonnet_solo",
+      "label": "Sonnet solo",
+      "model": "claude-sonnet-4-6",
+      "run": 3,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.076
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 392,
+        "executor_output_tokens": 1382,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.021906,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.021906,
+      "elapsed_secs": 25.1
+    },
+    {
+      "config": "sonnet_solo",
+      "label": "Sonnet solo",
+      "model": "claude-sonnet-4-6",
+      "run": 4,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0756
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 392,
+        "executor_output_tokens": 1261,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.020091,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.020091,
+      "elapsed_secs": 23.2
+    },
+    {
+      "config": "advisor",
+      "label": "Sonnet + Opus advisor",
+      "model": "claude-sonnet-4-6",
+      "run": 0,
+      "advisor_fired": true,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0753
+      },
+      "tokens": {
+        "advisor_calls": 1,
+        "executor_input_tokens": 3622,
+        "executor_output_tokens": 2026,
+        "advisor_input_tokens": 3462,
+        "advisor_output_tokens": 663,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.041256,
+      "advisor_cost_usd": 0.033885,
+      "total_cost_usd": 0.075141,
+      "elapsed_secs": 48.2
+    },
+    {
+      "config": "advisor",
+      "label": "Sonnet + Opus advisor",
+      "model": "claude-sonnet-4-6",
+      "run": 1,
+      "advisor_fired": true,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0717
+      },
+      "tokens": {
+        "advisor_calls": 1,
+        "executor_input_tokens": 3574,
+        "executor_output_tokens": 2590,
+        "advisor_input_tokens": 3462,
+        "advisor_output_tokens": 604,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.049572,
+      "advisor_cost_usd": 0.03241,
+      "total_cost_usd": 0.081982,
+      "elapsed_secs": 68.8
+    },
+    {
+      "config": "advisor",
+      "label": "Sonnet + Opus advisor",
+      "model": "claude-sonnet-4-6",
+      "run": 2,
+      "advisor_fired": true,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0756
+      },
+      "tokens": {
+        "advisor_calls": 3,
+        "executor_input_tokens": 9421,
+        "executor_output_tokens": 2620,
+        "advisor_input_tokens": 13251,
+        "advisor_output_tokens": 1798,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.067563,
+      "advisor_cost_usd": 0.111205,
+      "total_cost_usd": 0.178768,
+      "elapsed_secs": 80.7
+    },
+    {
+      "config": "advisor",
+      "label": "Sonnet + Opus advisor",
+      "model": "claude-sonnet-4-6",
+      "run": 3,
+      "advisor_fired": true,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0726
+      },
+      "tokens": {
+        "advisor_calls": 2,
+        "executor_input_tokens": 6139,
+        "executor_output_tokens": 1855,
+        "advisor_input_tokens": 7670,
+        "advisor_output_tokens": 1210,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.046242,
+      "advisor_cost_usd": 0.0686,
+      "total_cost_usd": 0.114842,
+      "elapsed_secs": 58.5
+    },
+    {
+      "config": "advisor",
+      "label": "Sonnet + Opus advisor",
+      "model": "claude-sonnet-4-6",
+      "run": 4,
+      "advisor_fired": true,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0674
+      },
+      "tokens": {
+        "advisor_calls": 1,
+        "executor_input_tokens": 3704,
+        "executor_output_tokens": 1924,
+        "advisor_input_tokens": 3462,
+        "advisor_output_tokens": 752,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.039972,
+      "advisor_cost_usd": 0.03611,
+      "total_cost_usd": 0.076082,
+      "elapsed_secs": 48.9
+    },
+    {
+      "config": "opus_solo",
+      "label": "Opus solo",
+      "model": "claude-opus-4-8",
+      "run": 0,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0714
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 587,
+        "executor_output_tokens": 1526,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.041085,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.041085,
+      "elapsed_secs": 19.0
+    },
+    {
+      "config": "opus_solo",
+      "label": "Opus solo",
+      "model": "claude-opus-4-8",
+      "run": 1,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0714
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 587,
+        "executor_output_tokens": 1898,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.050385,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.050385,
+      "elapsed_secs": 22.9
+    },
+    {
+      "config": "opus_solo",
+      "label": "Opus solo",
+      "model": "claude-opus-4-8",
+      "run": 2,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0505
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 587,
+        "executor_output_tokens": 1965,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.05206,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.05206,
+      "elapsed_secs": 24.4
+    },
+    {
+      "config": "opus_solo",
+      "label": "Opus solo",
+      "model": "claude-opus-4-8",
+      "run": 3,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0736
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 587,
+        "executor_output_tokens": 1310,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.035685,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.035685,
+      "elapsed_secs": 16.1
+    },
+    {
+      "config": "opus_solo",
+      "label": "Opus solo",
+      "model": "claude-opus-4-8",
+      "run": 4,
+      "advisor_fired": false,
+      "passed": true,
+      "reason": "ok",
+      "verdict": {
+        "passed": true,
+        "reason": "ok",
+        "completed": 60,
+        "total": 60,
+        "max_concurrency": 4,
+        "concurrency_limit": 4,
+        "shutdown_secs": 0.0739
+      },
+      "tokens": {
+        "advisor_calls": 0,
+        "executor_input_tokens": 587,
+        "executor_output_tokens": 1277,
+        "advisor_input_tokens": 0,
+        "advisor_output_tokens": 0,
+        "advisor_cache_read_tokens": 0
+      },
+      "stop_reason": "end_turn",
+      "executor_cost_usd": 0.03486,
+      "advisor_cost_usd": 0.0,
+      "total_cost_usd": 0.03486,
+      "elapsed_secs": 16.2
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# No third-party dependencies — pure Python standard library (3.8+).
+# You only need an ANTHROPIC_API_KEY with advisor-tool-2026-03-01 beta access.
