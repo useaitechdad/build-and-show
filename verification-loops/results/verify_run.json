@@ -1,0 +1,1890 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "pricing": {
+    "claude-haiku-4-5-20251001": {
+      "input": 1.0,
+      "output": 5.0
+    },
+    "claude-sonnet-4-6": {
+      "input": 3.0,
+      "output": 15.0
+    },
+    "claude-opus-4-8": {
+      "input": 5.0,
+      "output": 25.0
+    }
+  },
+  "pricing_source": "list rates per 1M tok, verified platform.claude.com 2026-06-15",
+  "max_turns": 16,
+  "n": 5,
+  "task": "mini-SQL",
+  "sets": {
+    "visible": 10,
+    "probe": 24,
+    "hidden": 16
+  },
+  "summary": {
+    "trust": {
+      "label": "Trust it (no checks)",
+      "runs": 5,
+      "hidden_total": 16,
+      "mean_hidden_pct": 92.5,
+      "min_hidden": 13,
+      "max_hidden": 16,
+      "perfect_runs": 2,
+      "mean_turns": 3.2,
+      "mean_cost_usd": 0.044584
+    },
+    "test": {
+      "label": "Test it (example tests)",
+      "runs": 5,
+      "hidden_total": 16,
+      "mean_hidden_pct": 100.0,
+      "min_hidden": 16,
+      "max_hidden": 16,
+      "perfect_runs": 5,
+      "mean_turns": 9.8,
+      "mean_cost_usd": 0.163266
+    },
+    "verify": {
+      "label": "Verify it (differential)",
+      "runs": 5,
+      "hidden_total": 16,
+      "mean_hidden_pct": 80.0,
+      "min_hidden": 0,
+      "max_hidden": 16,
+      "perfect_runs": 4,
+      "mean_turns": 8.2,
+      "mean_cost_usd": 0.154773
+    }
+  },
+  "runs": [
+    {
+      "mode": "trust",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 3,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.039516,
+      "tokens_in": 9016,
+      "tokens_out": 6100,
+      "api_calls": 3,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 0
+    },
+    {
+      "mode": "trust",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 3,
+      "visible": {
+        "passed": 8,
+        "total": 10,
+        "failures": [
+          {
+            "sql": "SELECT name FROM data ORDER BY salary",
+            "expected": [
+              {
+                "name": "Eve"
+              },
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              },
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Dee"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Eve"
+              },
+              {
+                "name": "Fay"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data ORDER BY salary DESC",
+            "expected": [
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Fay"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Eve"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Eve"
+              },
+              {
+                "name": "Fay"
+              }
+            ]
+          }
+        ]
+      },
+      "hidden": {
+        "passed": 14,
+        "total": 16,
+        "failures": [
+          {
+            "sql": "SELECT name, salary FROM data ORDER BY dept ASC, salary DESC",
+            "expected": [
+              {
+                "name": "Ann",
+                "salary": 120
+              },
+              {
+                "name": "Fay",
+                "salary": 110
+              },
+              {
+                "name": "Bob",
+                "salary": 100
+              },
+              {
+                "name": "Eve",
+                "salary": 80
+              },
+              {
+                "name": "Dee",
+                "salary": 150
+              },
+              {
+                "name": "Cy",
+                "salary": 90
+              }
+            ],
+            "got": [
+              {
+                "name": "Dee",
+                "salary": 150
+              },
+              {
+                "name": "Ann",
+                "salary": 120
+              },
+              {
+                "name": "Fay",
+                "salary": 110
+              },
+              {
+                "name": "Bob",
+                "salary": 100
+              },
+              {
+                "name": "Cy",
+                "salary": 90
+              },
+              {
+                "name": "Eve",
+                "salary": 80
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data ORDER BY age DESC LIMIT 3",
+            "expected": [
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Cy"
+              }
+            ]
+          }
+        ]
+      },
+      "hidden_score": 14,
+      "hidden_total": 16,
+      "cost_usd": 0.037508,
+      "tokens_in": 8718,
+      "tokens_out": 5758,
+      "api_calls": 3,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 1
+    },
+    {
+      "mode": "trust",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 4,
+      "visible": {
+        "passed": 8,
+        "total": 10,
+        "failures": [
+          {
+            "sql": "SELECT name FROM data ORDER BY salary",
+            "error": "TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'",
+            "expected": [
+              {
+                "name": "Eve"
+              },
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              },
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Dee"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data ORDER BY salary DESC",
+            "error": "TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'",
+            "expected": [
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Fay"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Eve"
+              }
+            ]
+          }
+        ]
+      },
+      "hidden": {
+        "passed": 13,
+        "total": 16,
+        "failures": [
+          {
+            "sql": "SELECT name, salary FROM data ORDER BY dept ASC, salary DESC",
+            "error": "TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'",
+            "expected": [
+              {
+                "name": "Ann",
+                "salary": 120
+              },
+              {
+                "name": "Fay",
+                "salary": 110
+              },
+              {
+                "name": "Bob",
+                "salary": 100
+              },
+              {
+                "name": "Eve",
+                "salary": 80
+              },
+              {
+                "name": "Dee",
+                "salary": 150
+              },
+              {
+                "name": "Cy",
+                "salary": 90
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data WHERE age > 30 AND age < 45 ORDER BY age",
+            "error": "TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'",
+            "expected": [
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Fay"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data ORDER BY age DESC LIMIT 3",
+            "error": "TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'",
+            "expected": [
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              }
+            ]
+          }
+        ]
+      },
+      "hidden_score": 13,
+      "hidden_total": 16,
+      "cost_usd": 0.06479,
+      "tokens_in": 18200,
+      "tokens_out": 9318,
+      "api_calls": 4,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 3,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 2
+    },
+    {
+      "mode": "trust",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 3,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 15,
+        "total": 16,
+        "failures": [
+          {
+            "sql": "SELECT name FROM data WHERE dept = 'eng' AND (salary > 100 OR age > 40)",
+            "error": "Exception: Expected comparison operator, got Token(TokenType.EOF, None)",
+            "expected": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              }
+            ]
+          }
+        ]
+      },
+      "hidden_score": 15,
+      "hidden_total": 16,
+      "cost_usd": 0.044889,
+      "tokens_in": 9904,
+      "tokens_out": 6997,
+      "api_calls": 3,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 3
+    },
+    {
+      "mode": "trust",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 3,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.036219,
+      "tokens_in": 8504,
+      "tokens_out": 5543,
+      "api_calls": 3,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 4
+    },
+    {
+      "mode": "test",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 9,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.154214,
+      "tokens_in": 78884,
+      "tokens_out": 15066,
+      "api_calls": 9,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 3,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 0,
+            "total": 10,
+            "n_fail": 6
+          }
+        },
+        {
+          "n": 4,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 5,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 8,
+            "total": 10,
+            "n_fail": 2
+          }
+        },
+        {
+          "n": 6,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 7,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 10,
+            "total": 10,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 8,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 0
+    },
+    {
+      "mode": "test",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 9,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.215536,
+      "tokens_in": 106876,
+      "tokens_out": 21732,
+      "api_calls": 9,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 3,
+            "total": 10,
+            "n_fail": 6
+          }
+        },
+        {
+          "n": 3,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 4,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 8,
+            "total": 10,
+            "n_fail": 2
+          }
+        },
+        {
+          "n": 5,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 6,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 7,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 10,
+            "total": 10,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 8,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 1
+    },
+    {
+      "mode": "test",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 12,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.166936,
+      "tokens_in": 113291,
+      "tokens_out": 10729,
+      "api_calls": 12,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 3,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 4,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 10,
+            "total": 10,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 5,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 6,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 7,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 8,
+            "total": 10,
+            "n_fail": 2
+          }
+        },
+        {
+          "n": 8,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 9,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 10,
+            "total": 10,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 10,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 10,
+            "total": 10,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 11,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 2
+    },
+    {
+      "mode": "test",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 11,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.195502,
+      "tokens_in": 99257,
+      "tokens_out": 19249,
+      "api_calls": 11,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 3,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 4,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 5,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 5,
+            "total": 10,
+            "n_fail": 5
+          }
+        },
+        {
+          "n": 6,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 7,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 8,
+            "total": 10,
+            "n_fail": 2
+          }
+        },
+        {
+          "n": 8,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 9,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 10,
+            "total": 10,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 10,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 3
+    },
+    {
+      "mode": "test",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 8,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.08414,
+      "tokens_in": 38670,
+      "tokens_out": 9094,
+      "api_calls": 8,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 3,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 4,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 8,
+            "total": 10,
+            "n_fail": 2
+          }
+        },
+        {
+          "n": 5,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 6,
+          "tools": [
+            "run_tests"
+          ],
+          "check": {
+            "tool": "run_tests",
+            "passed": 10,
+            "total": 10,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 7,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 4
+    },
+    {
+      "mode": "verify",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 9,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.176899,
+      "tokens_in": 96494,
+      "tokens_out": 16081,
+      "api_calls": 9,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 22,
+            "total": 24,
+            "n_fail": 2
+          }
+        },
+        {
+          "n": 3,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 4,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 19,
+            "total": 24,
+            "n_fail": 5
+          }
+        },
+        {
+          "n": 5,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 6,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 24,
+            "total": 24,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 7,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 8,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 0
+    },
+    {
+      "mode": "verify",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 4,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.053695,
+      "tokens_in": 18260,
+      "tokens_out": 7087,
+      "api_calls": 4,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 24,
+            "total": 24,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 3,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 1
+    },
+    {
+      "mode": "verify",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 5,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.053923,
+      "tokens_in": 24903,
+      "tokens_out": 5804,
+      "api_calls": 5,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 24,
+            "total": 24,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 3,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 4,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 2
+    },
+    {
+      "mode": "verify",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 9,
+      "visible": {
+        "passed": 0,
+        "total": 10,
+        "failures": [
+          {
+            "sql": "SELECT * FROM data",
+            "expected": [
+              {
+                "name": "Ann",
+                "dept": "eng",
+                "salary": 120,
+                "age": 30
+              },
+              {
+                "name": "Bob",
+                "dept": "eng",
+                "salary": 100,
+                "age": 45
+              },
+              {
+                "name": "Cy",
+                "dept": "sales",
+                "salary": 90,
+                "age": 35
+              },
+              {
+                "name": "Dee",
+                "dept": "sales",
+                "salary": 150,
+                "age": 50
+              },
+              {
+                "name": "Eve",
+                "dept": "hr",
+                "salary": 80,
+                "age": 28
+              },
+              {
+                "name": "Fay",
+                "dept": "eng",
+                "salary": 110,
+                "age": 38
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann",
+                "dept": "eng",
+                "salary": 120,
+                "age": 30
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name, salary FROM data",
+            "expected": [
+              {
+                "name": "Ann",
+                "salary": 120
+              },
+              {
+                "name": "Bob",
+                "salary": 100
+              },
+              {
+                "name": "Cy",
+                "salary": 90
+              },
+              {
+                "name": "Dee",
+                "salary": 150
+              },
+              {
+                "name": "Eve",
+                "salary": 80
+              },
+              {
+                "name": "Fay",
+                "salary": 110
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann",
+                "salary": 120
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data WHERE dept = 'eng'",
+            "expected": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data WHERE salary > 100",
+            "expected": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Fay"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data ORDER BY salary",
+            "expected": [
+              {
+                "name": "Eve"
+              },
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              },
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Dee"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data ORDER BY salary DESC",
+            "expected": [
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Fay"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Eve"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          }
+        ]
+      },
+      "hidden": {
+        "passed": 0,
+        "total": 16,
+        "failures": [
+          {
+            "sql": "SELECT name FROM data WHERE dept = 'eng' AND salary > 100",
+            "expected": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Fay"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data WHERE dept = 'eng' OR dept = 'hr'",
+            "expected": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Eve"
+              },
+              {
+                "name": "Fay"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data WHERE dept = 'eng' AND salary > 100 OR dept = 'hr'",
+            "expected": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Eve"
+              },
+              {
+                "name": "Fay"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data WHERE dept = 'eng' AND (salary > 100 OR age > 40)",
+            "expected": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data WHERE NOT dept = 'eng'",
+            "expected": [
+              {
+                "name": "Cy"
+              },
+              {
+                "name": "Dee"
+              },
+              {
+                "name": "Eve"
+              }
+            ],
+            "got": [
+              {
+                "name": "Cy"
+              }
+            ]
+          },
+          {
+            "sql": "SELECT name FROM data WHERE salary >= 100 AND salary <= 120",
+            "expected": [
+              {
+                "name": "Ann"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Fay"
+              }
+            ],
+            "got": [
+              {
+                "name": "Ann"
+              }
+            ]
+          }
+        ]
+      },
+      "hidden_score": 0,
+      "hidden_total": 16,
+      "cost_usd": 0.186284,
+      "tokens_in": 82429,
+      "tokens_out": 20771,
+      "api_calls": 9,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 1,
+            "total": 24,
+            "n_fail": 6
+          }
+        },
+        {
+          "n": 3,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 4,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 5,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 1,
+            "total": 24,
+            "n_fail": 6
+          }
+        },
+        {
+          "n": 6,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 7,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 1,
+            "total": 24,
+            "n_fail": 6
+          }
+        },
+        {
+          "n": 8,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 3
+    },
+    {
+      "mode": "verify",
+      "model": "claude-haiku-4-5-20251001",
+      "error": null,
+      "turns_used": 14,
+      "visible": {
+        "passed": 10,
+        "total": 10,
+        "failures": []
+      },
+      "hidden": {
+        "passed": 16,
+        "total": 16,
+        "failures": []
+      },
+      "hidden_score": 16,
+      "hidden_total": 16,
+      "cost_usd": 0.303062,
+      "tokens_in": 197457,
+      "tokens_out": 21121,
+      "api_calls": 14,
+      "turn_log": [
+        {
+          "n": 0,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 1,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 2,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 5,
+            "total": 24,
+            "n_fail": 6
+          }
+        },
+        {
+          "n": 3,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 4,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 15,
+            "total": 24,
+            "n_fail": 6
+          }
+        },
+        {
+          "n": 5,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 6,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 15,
+            "total": 24,
+            "n_fail": 6
+          }
+        },
+        {
+          "n": 7,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 8,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 9,
+          "tools": [
+            "write_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 10,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 24,
+            "total": 24,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 11,
+          "tools": [
+            "verify"
+          ],
+          "check": {
+            "tool": "verify",
+            "passed": 24,
+            "total": 24,
+            "n_fail": 0
+          }
+        },
+        {
+          "n": 12,
+          "tools": [
+            "read_file"
+          ],
+          "check": null
+        },
+        {
+          "n": 13,
+          "tools": [],
+          "check": null
+        }
+      ],
+      "solution_exists": true,
+      "run": 4
+    }
+  ]
+}

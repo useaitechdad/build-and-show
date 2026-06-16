@@ -1,0 +1,2 @@
+# No third-party dependencies — pure Python standard library (3.8+).
+# You only need an ANTHROPIC_API_KEY (set the env var, or put it in a local .env).
